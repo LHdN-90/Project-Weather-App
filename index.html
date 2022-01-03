@@ -6,9 +6,82 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="src/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Hello Git</h1>
+    <div class="container">
+      <form class="location">
+        <input type="text" class="town" id="town" placeholder="Enter city" />
+        <button class="search">Search</button>
+        <button class="search current">Current location</button>
+      </form>
+      <br />
+      <div class="card mb-3 currentPlace">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <div class="card-body">
+              <h5 class="card-title" id="searched-city"></h5>
+              <ul class="card-text">
+                <li id="date"></li>
+                <li class="temperature">
+                  <span id="current-temperature"></span
+                  ><span class="units">
+                    <a href="#" id="celcius">℃</a> /
+                    <a href="#" id="fahrenheit">℉</a></span
+                  >
+                </li>
+                <li class="weather"></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <img
+              src="images/cloudy.jpg"
+              class="img-fluid rounded-start"
+              alt="cloudy sky"
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="prediction">
+        <div class="row days">
+          <div class="col-4">Wednesday</div>
+          <div class="col-4">Sunny</div>
+          <div class="col-2">20℃</div>
+          <div class="col-2">☀️</div>
+        </div>
+        <div class="row days">
+          <div class="col-4">Thursday</div>
+          <div class="col-4">Sunny</div>
+          <div class="col-2">21℃</div>
+          <div class="col-2">☀️</div>
+        </div>
+        <div class="row days">
+          <div class="col-4">Friday</div>
+          <div class="col-4">Rainy</div>
+          <div class="col-2">16℃</div>
+          <div class="col-2">🌧</div>
+        </div>
+        <div class="row days">
+          <div class="col-4">Saturday</div>
+          <div class="col-4">Cloudy</div>
+          <div class="col-2">17℃</div>
+          <div class="col-2">☁️</div>
+        </div>
+        <div class="row days">
+          <div class="col-4">Sunday</div>
+          <div class="col-4">Sunny</div>
+          <div class="col-2">20℃</div>
+          <div class="col-2">☀️</div>
+        </div>
+      </div>
+    </div>
     <script src="src/script.js"></script>
   </body>
 </html>
