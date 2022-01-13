@@ -54,7 +54,14 @@ function currentCity(position) {
   axios.get(apiUrl).then(showTemp);
 }
 
-function getCurrentPosition() {
+function getcurrentPosition() {
+  //Dummy one, which will result in a working next statement.
+  navigator.geolocation.getCurrentPosition(
+    function () {},
+    function () {},
+    {}
+  );
+  //The working next statement.
   navigator.geolocation.getCurrentPosition(currentCity);
 }
 
