@@ -22,76 +22,57 @@
   </head>
   <body>
     <div class="container">
-      <form class="location">
-        <input type="text" class="town" id="town" placeholder="Enter city" />
-        <button class="search">Search</button>
-        <button class="search current">Current location</button>
-      </form>
+      <div class="row searchBar">
+        <form class="location">
+          <input
+            type="text"
+            class="town"
+            id="town"
+            placeholder="Enter a city"
+            autocomplete="off"
+          />
+          <button class="search">Search</button>
+          <button class="search current">Current location</button>
+        </form>
+      </div>
       <br />
-      <div class="card mb-3 currentPlace">
-        <div class="row g-0">
-          <div class="col-md-6">
-            <div class="card-body">
-              <h5 class="card-title" id="searched-city"></h5>
-              <ul class="card-text">
-                <li id="date"></li>
-                <li class="temperature">
-                  <span id="current-temperature"></span
-                  ><span class="units">
-                    <a href="#" id="celcius">℃</a> /
-                    <a href="#" id="fahrenheit">℉</a></span
-                  >
-                </li>
-                <li class="weather"></li>
-              </ul>
-            </div>
+      <div class="currentPlace">
+        <div class="row">
+          <div class="col-md-10">
+            <h1 id="searched-city"></h1>
+            <ul class="currentWeather">
+              <li class="time">
+                Last updated: <span class="currentTime"></span>
+              </li>
+              <li class="date">Date: <span class="currentDate"></span></li>
+              <li><br/></li>
+              <li class="temperature">
+                Current temperature: <span id="current-temperature"></span>℃
+              </li>
+              <li class="weatherCondition">
+                Current weather: <span id="condition"></span>
+              </li>
+              <li class="humidity">
+                Current weather: <span id="humidity"></span>
+              </li>
+              <li class="windSpeed">
+                Wind speed: <span id="windspeed"></span> km/h
+              </li>
+            </ul>
           </div>
-          <div class="col-md-6">
-            <img
-              src="images/cloudy.jpg"
-              class="img-fluid rounded-start"
-              alt="cloudy sky"
-            />
+          <div class="col-md-2">
+            <img src="" id="weather-icon" alt="weather-icon" />
+            </a>
           </div>
         </div>
       </div>
       <br />
-      <div class="prediction">
-        <div class="row days">
-          <div class="col-4">Wednesday</div>
-          <div class="col-4">Sunny</div>
-          <div class="col-2">20℃</div>
-          <div class="col-2">☀️</div>
-        </div>
-        <div class="row days">
-          <div class="col-4">Thursday</div>
-          <div class="col-4">Sunny</div>
-          <div class="col-2">21℃</div>
-          <div class="col-2">☀️</div>
-        </div>
-        <div class="row days">
-          <div class="col-4">Friday</div>
-          <div class="col-4">Rainy</div>
-          <div class="col-2">16℃</div>
-          <div class="col-2">🌧</div>
-        </div>
-        <div class="row days">
-          <div class="col-4">Saturday</div>
-          <div class="col-4">Cloudy</div>
-          <div class="col-2">17℃</div>
-          <div class="col-2">☁️</div>
-        </div>
-        <div class="row days">
-          <div class="col-4">Sunday</div>
-          <div class="col-4">Sunny</div>
-          <div class="col-2">20℃</div>
-          <div class="col-2">☀️</div>
-        </div>
+      <div id="prediction">
       </div>
       <div class="openSource">
         <a
           href="https://github.com/LHdN-90/Project-Weather-App.git"
-          target="0_blank"
+          target="_blank"
           >Open-source code
         </a>
         by Laura Ham
@@ -100,4 +81,3 @@
     <script src="src/script.js"></script>
   </body>
 </html>
-∂

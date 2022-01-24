@@ -1,6 +1,12 @@
 .container {
   font-family: "Nunito Sans", sans-serif;
   color: midnightblue;
+  margin: 0 auto;
+}
+.searchBar {
+  max-width: 450px;
+  display: block;
+  margin: 0 auto;
 }
 .location {
   text-align: center;
@@ -21,26 +27,46 @@ div.currentPlace {
   margin: 0 auto;
   max-width: 400px;
 }
+h1 {
+  font-size: 24px;
+  padding: 10px 10px 0px 10px;
+}
+ul {
+  padding: 10px;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  padding: 0px;
+}
 
 img {
   max-height: 160px;
-  border-radius: 4px;
+  border-radius: 0px;
   float: right;
 }
 
-.prediction {
+.weatherForecast {
   max-width: 400px;
   display: block;
   margin: 0 auto;
   text-align: center;
-  border: solid midnightblue;
-  border-width: medium;
 }
 
-.row,
-.days {
+div.days {
   border-radius: 4px;
-  border-color: midnightblue;
+  border: solid midnightblue;
+  text-align: center;
+  max-width: 400px;
+  margin: 5px;
+}
+
+.predDay,
+.predDescription,
+.predTemp {
+  position: relative;
+  top: 10px;
 }
 
 .openSource {
