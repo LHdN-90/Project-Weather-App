@@ -60,7 +60,7 @@ function displayForecast(response) {
         `
           <div class="row days">
           <div class="col-2 predDay">${formatDay(forecastDay.dt)}</div>
-          <div class="col-4 predDescription">${
+          <div class="col-5 predDescription">${
             forecastDay.weather[0].description
           }
           </div>
@@ -69,7 +69,7 @@ function displayForecast(response) {
           )}℃</span> | <span class="minTemp">${Math.round(
           forecastDay.temp.min
         )}℃</span></div>
-          <div class="col-2 weatherIcon">
+          <div class="col-1 weatherIcon">
           <img src="http://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png" id="weather-logo" alt="weather-icon" width="42"/></div>
@@ -116,39 +116,33 @@ function showData(response) {
   getForecast(response.data.coord);
 }
 
-function searchCity(event) {
+function search(event) {
   event.preventDefault();
-  let town = document.querySelector("#town");
+  let city = document.querySelector("#city-input");
   let unit = "metric";
   let apiKey = "1e7d31bd89d07944de888493f11e44b4";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${town.value}&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&appid=${apiKey}&units=${unit}`;
 
   axios.get(apiUrl).then(showData);
 }
 
+function currentCity(position) {
+  let Lon = position.coords.longitude;
+  let Lat = position.coords.latitude;
+  let unit = "metric";
+  let apiKey = "1e7d31bd89d07944de888493f11e44b4";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${Lat}&lon=${Lon}&appid=${apiKey}&units=${unit}`;
+
+  axios.get(apiUrl).then(showData);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(currentCity);
+}
+
 let searchButton = document.querySelector(".search");
-searchButton.addEventListener("click", searchCity);
+let currentButton = document.querySelector(".searchCurrent");
 
-// function currentCity(position) {
-//   let Lon = position.coords.longitude;
-//   let Lat = position.coords.latitude;
-//   let unit = "metric";
-//   let apiKey = "1e7d31bd89d07944de888493f11e44b4";
-//   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${Lat}&lon=${Lon}&appid=${apiKey}&units=${unit}`;
-
-//   axios.get(apiUrl).then(showData);
-// }
-
-// function getCurrentPosition() {
-//   //Dummy one, which will result in a working next statement.
-//   navigator.geolocation.getCurrentPosition(
-//     function () {},
-//     function () {},
-//     {}
-//   );
-//   //The working next statement.
-//   navigator.geolocation.getCurrentPosition(currentCity);
-// }
-
-// let currentButton = document.querySelector(".current");
-// currentButton.addEventListener("click", getCurrentPosition);
+searchButton.addEventListener("click", search);
+currentButton.addEventListener("click", getCurrentLocation);
