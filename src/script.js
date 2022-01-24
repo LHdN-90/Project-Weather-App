@@ -70,7 +70,7 @@ function displayForecast(response) {
           forecastDay.temp.min
         )}℃</span></div>
           <div class="col-1 weatherIcon">
-          <img src="http://openweathermap.org/img/wn/${
+          <img src="https://openweathermap.org/img/wn/${
             forecastDay.weather[0].icon
           }@2x.png" id="weather-logo" alt="weather-icon" width="42"/></div>
           </div>   
