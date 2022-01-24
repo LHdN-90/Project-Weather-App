@@ -109,7 +109,7 @@ function showData(response) {
   windspeed.innerHTML = Math.round(response.data.wind.speed * 3.6);
   weatherLogo.setAttribute(
     "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   weatherLogo.setAttribute("alt", response.data.weather[0].main);
 
